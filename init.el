@@ -1,4 +1,5 @@
 ;; Packages that I use:
+;; - markdown-mode
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
@@ -12,3 +13,4 @@
 (setq default-input-method "russian-computer")
 (setq-default indicate-empty-lines t)
 (setq ring-bell-function 'ignore)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
