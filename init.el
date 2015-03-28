@@ -4,8 +4,10 @@
 
 ;; Packages that I want to be installed.
 (setq my-packages '(helm
+                    helm-projectile
                     markdown-mode
                     php-mode
+                    projectile
                     scss-mode
                     web-mode))
 
@@ -55,6 +57,11 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
