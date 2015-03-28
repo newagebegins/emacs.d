@@ -29,7 +29,7 @@
 ;; Tweaks for multi-lingual environment.
 (prefer-coding-system 'utf-8)
 (setq default-input-method "russian-computer")
-(global-set-key (kbd "M-l") 'toggle-input-method)
+;;(global-set-key (kbd "M-l") 'toggle-input-method)
 
 ;; Disable annoying sounds on Windows.
 (setq ring-bell-function 'ignore)
