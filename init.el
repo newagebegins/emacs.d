@@ -1,13 +1,11 @@
+;; Configure package system.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 ;; Packages that I want to be installed.
-(setq my-packages '(helm
-                    helm-projectile
-                    markdown-mode
+(setq my-packages '(markdown-mode
                     php-mode
-                    projectile
                     scss-mode
                     web-mode))
 
@@ -20,6 +18,7 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Tweak the font height.
 (set-face-attribute 'default nil :height 98)
 
 ;; Disable backups and auto-saves.
@@ -44,22 +43,6 @@
 ;; Use Github Flavored Markdown mode for markdown files.
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
-(savehist-mode 1)
-
-(recentf-mode 1)
-(setq recentf-max-saved-items 500)
-
-(require 'helm-config)
-(helm-mode 1)
-;; Better window splitting (prevents too small windows when, for example,
-;; re-builder is open)
-(setq helm-split-window-in-side-p t)
-(global-set-key (kbd "C-x b") 'helm-mini)
-
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(require 'helm-projectile)
-(helm-projectile-on)
 
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
