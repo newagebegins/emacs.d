@@ -51,6 +51,15 @@
 (setq recentf-max-menu-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
+
+(require 'dired-x) ; Enables dired-jump with C-x C-j
+
+;; Make dired use the same buffer, instead of spawning many
+(put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+
+
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
 (delete-selection-mode)
