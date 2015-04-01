@@ -38,6 +38,8 @@
 (tool-bar-mode 0)
 ;; Disable cursor blinking.
 (blink-cursor-mode 0)
+;; Disable scrollbars.
+(scroll-bar-mode -1)
 ;; Smooth scrolling.
 (setq scroll-step 3)
 ;; Use Github Flavored Markdown mode for markdown files.
