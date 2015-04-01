@@ -46,6 +46,11 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
 (delete-selection-mode)
