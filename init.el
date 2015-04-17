@@ -53,6 +53,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
+(global-subword-mode)
 
 (require 'dired-x) ; Enables dired-jump with C-x C-j
 
@@ -72,8 +73,8 @@
 (defun my-c-mode-hook ()
   (setq truncate-lines t)
   (setq c-basic-offset 4)
-  (setq c-default-style "stroustrup")
-  (c-set-offset 'case-label '+))
+  (setq c-default-style "stroustrup"))
+  ;;(c-set-offset 'case-label '+))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 (require 'php-mode)
