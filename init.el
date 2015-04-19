@@ -104,6 +104,9 @@
 (global-set-key [f12] 'next-error)
 ;;(global-set-key (kbd "C-o") 'other-window)
 ;;(global-set-key (kbd "M-r") 'save-buffer)
+;;(global-set-key (kbd "<backtab>") 'dabbrev-expand)
+;;(global-set-key (kbd "<tab>") 'indent-for-tab-command)
+;;(global-set-key (kbd "C-v") 'undo)
 
 ;; helm
 (require 'helm-config)
@@ -113,6 +116,7 @@
 (setq helm-split-window-in-side-p t)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
+;;(global-set-key (kbd "M-o") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 
