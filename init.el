@@ -73,8 +73,8 @@
 (defun my-c-mode-hook ()
   (setq truncate-lines t)
   (setq c-basic-offset 4)
-  (setq c-default-style "stroustrup"))
-  ;;(c-set-offset 'case-label '+))
+  (setq c-default-style "stroustrup")
+  (c-set-offset 'case-label '+))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 (require 'php-mode)
@@ -118,7 +118,6 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 ;;(global-set-key (kbd "M-o") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-
 
 ;; projectile
 (projectile-global-mode)
