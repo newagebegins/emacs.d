@@ -3,11 +3,7 @@
 (package-initialize)
 
 (setq my-packages '(markdown-mode
-                    helm
-                    helm-descbinds
-                    helm-projectile
                     php-mode
-                    projectile
                     scss-mode
                     web-mode
                     zenburn-theme))
@@ -93,10 +89,6 @@
   (setq web-mode-code-indent-offset 2))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
-;; (ido-mode 1)
-
 (winner-mode)
 
 (global-set-key [f10] 'recompile)
@@ -111,24 +103,3 @@
 ;; (global-set-key (kbd "C-S-f") 'yank-pop)
 ;; (global-set-key (kbd "M-b") 'switch-to-buffer)
 ;; (global-set-key (kbd "C-3") 'switch-to-buffer)
-
-;; helm
-;;(require 'helm-config)
-;;(helm-mode 1)
-;; Better window splitting (prevents too small windows when, for
-;; example, re-builder is open)
-;;(setq helm-split-window-in-side-p t)
-;;(global-set-key (kbd "M-x") 'helm-M-x)
-;;(global-set-key (kbd "C-x b") 'helm-mini)
-;;(global-set-key (kbd "M-o") 'helm-mini)
-;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-;; projectile
-;; (projectile-global-mode)
-;; (setq projectile-completion-system 'helm)
-;; (require 'helm-projectile)
-;; (helm-projectile-on)
-;; (setq projectile-indexing-method 'alien)
-
-;; helm-descbinds
-;;(helm-descbinds-mode)
