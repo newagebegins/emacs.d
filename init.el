@@ -37,6 +37,7 @@
 (setq ring-bell-function 'ignore)
 ;; Show matching parenthesis.
 (show-paren-mode)
+(menu-bar-mode -1)
 (tool-bar-mode 0)
 (blink-cursor-mode 0)
 (scroll-bar-mode -1)
@@ -49,7 +50,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
-(global-subword-mode)
 
 (require 'dired-x) ; Enables dired-jump with C-x C-j
 
@@ -69,7 +69,7 @@
 (defun my-c-mode-hook ()
   (setq truncate-lines t)
   (setq c-basic-offset 4)
-  (setq c-default-style "stroustrup")
+  (setq c-default-style "awk")
   (c-set-offset 'case-label '+))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
@@ -91,9 +91,22 @@
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 (winner-mode)
+(setq set-mark-command-repeat-pop t)
+
+(require 'ido)
+(ido-mode t)
 
 (global-set-key [f10] 'recompile)
 (global-set-key [f11] 'previous-error)
 (global-set-key [f12] 'next-error)
 (global-set-key (kbd "M-r") 'save-buffer)
 (global-set-key (kbd "M-v") 'switch-to-buffer)
+(global-set-key (kbd "M-V") 'switch-to-buffer-other-window)
+(global-set-key (kbd "M-k") 'kill-this-buffer)
+(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-f") 'find-file)
+(global-set-key (kbd "M-F") 'find-file-other-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+;;(global-set-key (kbd "C-e") 'kill-ring-save)
+;;(global-set-key (kbd "C-r") 'yank)
+;;(global-set-key (kbd "C-S-s") 'isearch-backward)
