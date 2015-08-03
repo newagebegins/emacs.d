@@ -109,4 +109,5 @@
 (global-set-key (kbd "M-1") 'delete-other-windows)
 ;;(global-set-key (kbd "C-e") 'kill-ring-save)
 ;;(global-set-key (kbd "C-r") 'yank)
-;;(global-set-key (kbd "C-S-s") 'isearch-backward)
+;;(global-set-key (kbd "M-d") 'isearch-forward)
+;;(global-set-key (kbd "M-D") 'isearch-backward)
