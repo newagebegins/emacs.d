@@ -6,7 +6,8 @@
                     php-mode
                     scss-mode
                     web-mode
-                    zenburn-theme))
+                    zenburn-theme
+                    yaml-mode))
 
 ;; Fetch the list of available packages.
 (unless package-archive-contents
@@ -22,7 +23,9 @@
 (load-theme 'zenburn t)
 
 ;; Tweak font size.
-(set-face-attribute 'default nil :height 98)
+;;(set-face-attribute 'default nil :height 98)
+;;(set-face-attribute 'default nil :font "Consolas-11")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
 ;; Disable backups and auto-saves.
 (setq make-backup-files nil)
@@ -39,7 +42,8 @@
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode 0)
-(blink-cursor-mode 0)
+;;(blink-cursor-mode 0)
+(global-hl-line-mode 1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 ;; Smooth scrolling.
@@ -103,11 +107,11 @@
 (global-set-key (kbd "M-v") 'switch-to-buffer)
 (global-set-key (kbd "M-V") 'switch-to-buffer-other-window)
 (global-set-key (kbd "M-k") 'kill-this-buffer)
-(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-t") 'other-window)
 (global-set-key (kbd "M-f") 'find-file)
 (global-set-key (kbd "M-F") 'find-file-other-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
-;;(global-set-key (kbd "C-e") 'kill-ring-save)
-;;(global-set-key (kbd "C-r") 'yank)
-;;(global-set-key (kbd "M-d") 'isearch-forward)
-;;(global-set-key (kbd "M-D") 'isearch-backward)
+(global-set-key (kbd "C-e") 'kill-ring-save)
+(global-set-key (kbd "C-v") 'yank)
+(global-set-key (kbd "C-d") 'kill-line)
+(global-set-key (kbd "M-o") (kbd "C-u C-SPC"))
