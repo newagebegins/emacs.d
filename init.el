@@ -42,7 +42,7 @@
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode 0)
-;;(blink-cursor-mode 0)
+(blink-cursor-mode 0)
 (global-hl-line-mode 1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
