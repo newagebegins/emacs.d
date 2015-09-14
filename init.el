@@ -47,7 +47,7 @@
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 ;; Smooth scrolling.
-;;(setq scroll-step 3)
+(setq scroll-step 3)
 ;; Use Github Flavored Markdown mode for markdown files.
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
