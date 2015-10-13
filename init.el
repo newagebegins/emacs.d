@@ -16,11 +16,11 @@
     (package-install package)))
 
 ;; Load Zenburn theme.
-;;(setq custom-safe-themes '("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default))
-;;(load-theme 'zenburn t)
+(setq custom-safe-themes '("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default))
+(load-theme 'zenburn t)
 
-(setq custom-safe-themes '("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))
-(load-theme 'monokai t)
+;;(setq custom-safe-themes '("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))
+;;(load-theme 'monokai t)
 
 ;; Tweak font size.
 ;;(set-face-attribute 'default nil :height 98)
@@ -42,7 +42,7 @@
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode 0)
-(blink-cursor-mode 0)
+;;(blink-cursor-mode 0)
 ;;(global-hl-line-mode 1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
