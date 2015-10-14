@@ -6,23 +6,16 @@
                     php-mode
                     scss-mode
                     web-mode
-                    zenburn-theme
                     yaml-mode
-                    monokai-theme))
+                    solarized-theme))
 
 ;; Install missing packages.
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
 
-;; Load Zenburn theme.
-(setq custom-safe-themes '("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default))
-(load-theme 'zenburn t)
+(load-theme 'solarized-dark t)
 
-;;(setq custom-safe-themes '("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))
-;;(load-theme 'monokai t)
-
-;; Tweak font size.
 ;;(set-face-attribute 'default nil :height 98)
 ;;(set-face-attribute 'default nil :font "Consolas-11")
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
