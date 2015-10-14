@@ -16,8 +16,7 @@
 
 (load-theme 'solarized-dark t)
 
-;;(set-face-attribute 'default nil :height 98)
-;;(set-face-attribute 'default nil :font "Consolas-11")
+;; Tweak the font.
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
 ;; Disable backups and auto-saves.
@@ -29,14 +28,11 @@
 (global-set-key (kbd "M-l") 'toggle-input-method)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
 
-;; Disable annoying sounds on Windows.
-(setq ring-bell-function 'ignore)
-;; Show matching parenthesis.
+(setq ring-bell-function 'ignore) ; Disable annoying sounds on Windows.
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode 0)
-;;(blink-cursor-mode 0)
-;;(global-hl-line-mode 1)
+(blink-cursor-mode 0)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 
@@ -48,7 +44,6 @@
 ;; Use Github Flavored Markdown mode for markdown files.
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
 
@@ -113,6 +108,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
 (define-key my-keys-minor-mode-map (kbd "C-d") 'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
+(define-key my-keys-minor-mode-map (kbd "C-b") 'ibuffer)
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
   t " my-keys" 'my-keys-minor-mode-map)
