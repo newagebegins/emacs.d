@@ -20,6 +20,8 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(setq solarized-use-variable-pitch nil)
+(setq solarized-scale-org-headlines nil)
 (load-theme 'solarized-dark t)
 
 ;; Tweak the font.
