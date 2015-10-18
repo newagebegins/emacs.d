@@ -97,11 +97,28 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(setq coffee-tab-width 2)
+
+;; =============================================================================
+;; Helm, projectile, etc.
+;; =============================================================================
+
+(require 'helm')
 (require 'helm-config)
-(helm-mode 1)
+
+;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-c h o") 'helm-occur)
+
+(helm-mode 1)
+(helm-autoresize-mode 1)
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
