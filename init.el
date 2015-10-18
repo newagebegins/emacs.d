@@ -10,6 +10,8 @@
                     jade-mode
                     coffee-mode
                     helm
+                    projectile
+                    helm-projectile
                     solarized-theme))
 
 ;; Install missing packages.
@@ -102,6 +104,11 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
 
 ;; (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 ;; (define-key my-keys-minor-mode-map [f10] 'recompile)
