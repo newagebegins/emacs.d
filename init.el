@@ -7,6 +7,8 @@
                     scss-mode
                     web-mode
                     yaml-mode
+                    jade-mode
+                    coffee-mode
                     solarized-theme))
 
 ;; Install missing packages.
@@ -91,6 +93,8 @@
 
 (require 'ido)
 (ido-mode t)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 ;; (define-key my-keys-minor-mode-map [f10] 'recompile)
