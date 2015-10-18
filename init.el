@@ -12,6 +12,7 @@
                     helm
                     projectile
                     helm-projectile
+                    helm-descbinds
                     solarized-theme))
 
 ;; Install missing packages.
@@ -109,6 +110,8 @@
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
+
+(helm-descbinds-mode)
 
 ;; (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 ;; (define-key my-keys-minor-mode-map [f10] 'recompile)
