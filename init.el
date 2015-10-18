@@ -9,6 +9,7 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
+                    helm
                     solarized-theme))
 
 ;; Install missing packages.
@@ -91,10 +92,16 @@
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
 
-(require 'ido)
-(ido-mode t)
+;;(require 'ido)
+;;(ido-mode t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 ;; (define-key my-keys-minor-mode-map [f10] 'recompile)
