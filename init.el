@@ -9,10 +9,6 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
-                    helm
-                    projectile
-                    helm-projectile
-                    helm-descbinds
                     solarized-theme))
 
 ;; Install missing packages.
@@ -33,6 +29,8 @@
 
 (prefer-coding-system 'utf-8)
 (setq default-input-method "russian-computer")
+(global-set-key (kbd "M-l") 'toggle-input-method)
+(define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
 
 (setq ring-bell-function 'ignore) ; Disable annoying sounds on Windows.
 (show-paren-mode)
@@ -95,37 +93,34 @@
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(require 'ido)
+(ido-mode t)
 
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
-;; =============================================================================
-;; Helm, projectile, etc.
-;; =============================================================================
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+(define-key my-keys-minor-mode-map [f10] 'recompile)
+(define-key my-keys-minor-mode-map [f11] 'previous-error)
+(define-key my-keys-minor-mode-map [f12] 'next-error)
+(define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-v") 'switch-to-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-V") 'switch-to-buffer-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
+(define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
+(define-key my-keys-minor-mode-map (kbd "M-F") 'find-file-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
+(define-key my-keys-minor-mode-map (kbd "C-e") 'kill-ring-save)
+(define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
+(define-key my-keys-minor-mode-map (kbd "C-d") 'kill-line)
+(define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
+(define-key my-keys-minor-mode-map (kbd "C-b") 'ibuffer)
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  t " my-keys" 'my-keys-minor-mode-map)
 
-(require 'helm-config)
 
-;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-c h o") 'helm-occur)
-
-(helm-mode 1)
-(helm-autoresize-mode 1)
-
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
-(setq projectile-switch-project-action 'helm-projectile)
-
-(helm-descbinds-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
