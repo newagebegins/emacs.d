@@ -46,7 +46,7 @@
 (setq mouse-wheel-progressive-speed nil)
 
 ;; Use Github Flavored Markdown mode for markdown files.
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(md\\|txt\\)$" . gfm-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
@@ -99,13 +99,15 @@
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
+(defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-v") 'switch-to-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-V") 'switch-to-buffer-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-b") 'switch-to-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-B") 'switch-to-buffer-other-window)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
 (define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
