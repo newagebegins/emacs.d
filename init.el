@@ -107,8 +107,9 @@
 
 (require 'helm-config)
 
-;;(helm-mode 1)
-;;(helm-autoresize-mode 1)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z")  'helm-select-action)
+
 (setq helm-split-window-in-side-p t)
 
 (projectile-global-mode)
@@ -127,8 +128,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-v") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
-(define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
-(define-key my-keys-minor-mode-map (kbd "M-F") 'find-file-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
 (define-key my-keys-minor-mode-map (kbd "C-e") 'kill-ring-save)
 (define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
