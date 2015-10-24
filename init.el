@@ -135,6 +135,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-d") 'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
 (define-key my-keys-minor-mode-map (kbd "C-b") 'ibuffer)
+(define-key my-keys-minor-mode-map (kbd "C-p") 'helm-projectile)
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
   t " my-keys" 'my-keys-minor-mode-map)
