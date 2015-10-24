@@ -9,6 +9,10 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
+                    helm
+                    projectile
+                    helm-projectile
+                    helm-descbinds
                     solarized-theme))
 
 ;; Install missing packages.
@@ -101,13 +105,26 @@
 
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
 
+(require 'helm-config)
+
+;;(helm-mode 1)
+;;(helm-autoresize-mode 1)
+(setq helm-split-window-in-side-p t)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
+
+(helm-descbinds-mode)
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-b") 'switch-to-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-B") 'switch-to-buffer-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-v") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
 (define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
