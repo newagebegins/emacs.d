@@ -105,6 +105,7 @@
 
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
 
+(require 'helm)
 (require 'helm-config)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
