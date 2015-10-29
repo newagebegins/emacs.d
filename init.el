@@ -46,15 +46,16 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
+(global-subword-mode 1)
+
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)
 
 (require 'dired-x) ; Enables dired-jump with C-x C-j
 
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
-
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
@@ -78,6 +79,30 @@
 (setq ruby-insert-encoding-magic-comment nil)
 
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
+
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+(define-key my-keys-minor-mode-map [f10] 'recompile)
+(define-key my-keys-minor-mode-map [f11] 'previous-error)
+(define-key my-keys-minor-mode-map [f12] 'next-error)
+(define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-v") 'switch-to-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-V") 'ibuffer)
+(define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
+(define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
+(define-key my-keys-minor-mode-map (kbd "M-F") 'find-file-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
+(define-key my-keys-minor-mode-map (kbd "C-e") 'kill-ring-save)
+(define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
+(define-key my-keys-minor-mode-map (kbd "C-d") 'kill-line)
+(define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
+(define-key my-keys-minor-mode-map (kbd "C-5") 'recentf-open-files)
+(define-key my-keys-minor-mode-map (kbd "C-z") 'undo)
+(define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
+(define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  t " my-keys" 'my-keys-minor-mode-map)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
