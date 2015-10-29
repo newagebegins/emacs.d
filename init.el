@@ -3,9 +3,7 @@
 (package-initialize)
 
 (setq my-packages '(markdown-mode
-                    php-mode
                     scss-mode
-                    web-mode
                     yaml-mode
                     jade-mode
                     coffee-mode
@@ -72,23 +70,6 @@
   (setq c-default-style "awk")
   (c-set-offset 'case-label '+))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
-
-(require 'php-mode)
-(add-to-list 'auto-mode-alist '("\\.\\(test\\|module\\|inc\\|install\\|profile\\)$" . php-mode))
-(defun my-php-mode-hook ()
-  (setq truncate-lines t)
-  (php-enable-drupal-coding-style))
-(add-hook 'php-mode-hook  'my-php-mode-hook)
-
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(defun my-web-mode-hook ()
-  (setq truncate-lines t)
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
-(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
