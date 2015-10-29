@@ -56,6 +56,7 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
