@@ -52,7 +52,9 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (setq-default fill-column 80)
 (setq-default indicate-empty-lines t)
