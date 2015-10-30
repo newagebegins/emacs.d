@@ -7,6 +7,10 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
+                    helm
+                    projectile
+                    helm-projectile
+                    helm-descbinds
                     solarized-theme))
 
 ;; Install missing packages.
@@ -80,25 +84,44 @@
 
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
 
+(require 'helm)
+(require 'helm-config)
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z")  'helm-select-action)
+
+(setq helm-split-window-in-side-p t)
+(helm-mode 1)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
+
+(helm-descbinds-mode)
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-v") 'switch-to-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-v") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "M-V") 'ibuffer)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
-(define-key my-keys-minor-mode-map (kbd "M-f") 'find-file)
-(define-key my-keys-minor-mode-map (kbd "M-F") 'find-file-other-window)
+(define-key my-keys-minor-mode-map (kbd "M-f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
 (define-key my-keys-minor-mode-map (kbd "C-e") 'kill-ring-save)
 (define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
 (define-key my-keys-minor-mode-map (kbd "C-d") 'kill-line)
 (define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
-(define-key my-keys-minor-mode-map (kbd "C-5") 'recentf-open-files)
 (define-key my-keys-minor-mode-map (kbd "C-z") 'undo)
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
+(define-key my-keys-minor-mode-map (kbd "C-p") 'helm-projectile)
+(define-key my-keys-minor-mode-map (kbd "M-3") 'split-window-right)
+(define-key my-keys-minor-mode-map (kbd "M-2") 'split-window-below)
+(define-key my-keys-minor-mode-map (kbd "M-0") 'delete-window)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
