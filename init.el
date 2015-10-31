@@ -11,6 +11,7 @@
                     projectile
                     helm-projectile
                     helm-descbinds
+                    wgrep
                     solarized-theme))
 
 ;; Install missing packages.
@@ -122,6 +123,9 @@
 (define-key my-keys-minor-mode-map (kbd "M-3") 'split-window-right)
 (define-key my-keys-minor-mode-map (kbd "M-2") 'split-window-below)
 (define-key my-keys-minor-mode-map (kbd "M-0") 'delete-window)
+(define-key my-keys-minor-mode-map (kbd "C-c e") 'point-to-register)
+(define-key my-keys-minor-mode-map (kbd "C-c r") 'jump-to-register)
+(define-key my-keys-minor-mode-map (kbd "M-t") 'helm-semantic-or-imenu)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
