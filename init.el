@@ -8,6 +8,7 @@
                     jade-mode
                     coffee-mode
                     wgrep
+                    ag
                     solarized-theme))
 
 ;; Install missing packages.
@@ -15,9 +16,10 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(setq solarized-use-variable-pitch nil)
-(setq solarized-scale-org-headlines nil)
-(load-theme 'solarized-dark t)
+;(setq solarized-use-variable-pitch nil)
+;(setq solarized-scale-org-headlines nil)
+;(load-theme 'solarized-dark t)
+(load-theme 'leuven t)
 
 ;; Tweak the font.
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
