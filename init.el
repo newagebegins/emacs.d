@@ -8,18 +8,14 @@
                     jade-mode
                     coffee-mode
                     wgrep
-                    ag
-                    solarized-theme))
+                    ag))
 
 ;; Install missing packages.
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
 
-;(setq solarized-use-variable-pitch nil)
-;(setq solarized-scale-org-headlines nil)
-;(load-theme 'solarized-dark t)
-(load-theme 'leuven t)
+(load-theme 'tango-dark t)
 
 ;; Tweak the font.
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
@@ -81,6 +77,8 @@
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
+(add-to-list 'safe-local-variable-values '(encoding . utf-8))
+
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
@@ -115,16 +113,3 @@
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
   t " my-keys" 'my-keys-minor-mode-map)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
