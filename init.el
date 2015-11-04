@@ -11,9 +11,11 @@
                     ag))
 
 ;; Install missing packages.
-(dolist (package my-packages)
-  (unless (package-installed-p package)
-    (package-install package)))
+(unless (every #'package-installed-p my-packages)
+  (package-refresh-contents)
+  (dolist (package my-packages)
+    (unless (package-installed-p package)
+      (package-install package))))
 
 (load-theme 'tango-dark t)
 
