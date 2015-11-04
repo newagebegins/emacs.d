@@ -73,6 +73,7 @@
 
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
+(global-auto-revert-mode 1)
 
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
