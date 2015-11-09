@@ -13,6 +13,7 @@
                     projectile
                     helm-projectile
                     helm-descbinds
+                    flycheck
                     ag))
 
 ;; Install missing packages.
@@ -80,8 +81,10 @@
 
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
-(global-auto-revert-mode 1)
 (desktop-save-mode 1)
+
+(global-auto-revert-mode 1)
+(setq auto-revert-interval 1)
 
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
@@ -109,6 +112,8 @@
 
 (helm-descbinds-mode)
 
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
 (define-key my-keys-minor-mode-map [f10] 'recompile)
@@ -135,6 +140,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c e") 'point-to-register)
 (define-key my-keys-minor-mode-map (kbd "C-c r") 'jump-to-register)
 (define-key my-keys-minor-mode-map (kbd "M-t") 'helm-semantic-or-imenu)
+(define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
