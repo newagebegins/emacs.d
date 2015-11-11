@@ -144,6 +144,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
+(define-key helm-map (kbd "M-l") 'toggle-input-method)
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
