@@ -8,13 +8,15 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
+                    ag
                     wgrep
+                    wgrep-ag
                     helm
                     projectile
                     helm-projectile
                     helm-descbinds
                     flycheck
-                    ag))
+                    js2-mode))
 
 ;; Install missing packages.
 (unless (every #'package-installed-p my-packages)
@@ -89,6 +91,8 @@
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 (require 'server)
 (unless (server-running-p) (server-start))
 
@@ -149,3 +153,15 @@
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
   t " my-keys" 'my-keys-minor-mode-map)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(js2-basic-offset 2))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
