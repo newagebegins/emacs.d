@@ -106,7 +106,6 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
-(setq helm-split-window-in-side-p t)
 (helm-mode 1)
 
 (projectile-global-mode)
@@ -158,6 +157,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(helm-autoresize-mode t)
+ '(helm-buffer-max-length 40)
  '(js2-basic-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
