@@ -16,6 +16,7 @@
                     helm-projectile
                     helm-descbinds
                     flycheck
+                    sass-mode
                     js2-mode))
 
 ;; Install missing packages.
@@ -83,7 +84,6 @@
 
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
-(desktop-save-mode 1)
 
 (global-auto-revert-mode 1)
 (setq auto-revert-interval 1)
@@ -157,6 +157,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(coffee-indent-like-python-mode t)
  '(helm-autoresize-mode t)
  '(helm-buffer-max-length 40)
  '(js2-basic-offset 2))
