@@ -41,7 +41,9 @@
 (setq ring-bell-function 'ignore) ; Disable annoying sounds on Windows.
 (show-paren-mode)
 (menu-bar-mode -1)
-(tool-bar-mode 0)
+;; Need tool-bar-mode to be active for grep and ag to work correctly.
+;; With disabled tool-bar-mode they often finish prematurely.
+;; (tool-bar-mode 0)
 (blink-cursor-mode 0)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
@@ -157,6 +159,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-highlight-search t)
  '(coffee-indent-like-python-mode t)
  '(helm-autoresize-mode t)
  '(helm-buffer-max-length 40)
