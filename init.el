@@ -47,6 +47,10 @@
 (blink-cursor-mode 0)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
+(windmove-default-keybindings)
+
+;; Better handling of CamelCase.
+(setq dabbrev-case-fold-search nil)
 
 ;; Smooth scrolling.
 (setq scroll-step 3)
@@ -154,6 +158,7 @@
 (define-minor-mode my-keys-minor-mode
   "A minor mode so that my key settings override annoying major modes."
   t " my-keys" 'my-keys-minor-mode-map)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
