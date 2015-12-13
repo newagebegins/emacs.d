@@ -40,7 +40,6 @@
 
 (setq ring-bell-function 'ignore) ; Disable annoying sounds on Windows.
 (show-paren-mode)
-(menu-bar-mode -1)
 ;; Need tool-bar-mode to be active for grep and ag to work correctly.
 ;; With disabled tool-bar-mode they often finish prematurely.
 ;; (tool-bar-mode 0)
