@@ -167,6 +167,7 @@
  '(coffee-indent-like-python-mode t)
  '(helm-autoresize-mode t)
  '(helm-buffer-max-length 40)
+ '(helm-inherit-input-method nil)
  '(js2-basic-offset 2)
  '(org-imenu-depth 9))
 (custom-set-faces
