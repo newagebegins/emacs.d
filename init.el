@@ -168,7 +168,8 @@
  '(coffee-indent-like-python-mode t)
  '(helm-autoresize-mode t)
  '(helm-buffer-max-length 40)
- '(js2-basic-offset 2))
+ '(js2-basic-offset 2)
+ '(org-imenu-depth 9))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
