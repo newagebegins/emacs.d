@@ -5,6 +5,7 @@
 /eshell/
 /.emacs.desktop*
 /projectile-bookmarks.eld
+/projectile.cache
 /url/
 /server/
 /session*

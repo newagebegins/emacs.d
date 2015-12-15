@@ -28,12 +28,9 @@
 
 (load-theme 'tango-dark t)
 
-;; Tweak the font.
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
-;; Disable backups and auto-saves.
 (setq make-backup-files nil)
-(setq auto-save-default nil)
 
 (prefer-coding-system 'utf-8)
 (setq default-input-method "russian-computer")
@@ -108,6 +105,9 @@
 (require 'helm)
 (require 'helm-config)
 
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
@@ -122,41 +122,13 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
-(define-key my-keys-minor-mode-map [f10] 'recompile)
-(define-key my-keys-minor-mode-map [f11] 'previous-error)
-(define-key my-keys-minor-mode-map [f12] 'next-error)
-(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
-(define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
-(define-key my-keys-minor-mode-map (kbd "M-v") 'helm-mini)
-(define-key my-keys-minor-mode-map (kbd "M-V") 'ibuffer)
-(define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
-(define-key my-keys-minor-mode-map (kbd "M-f") 'helm-find-files)
-(define-key my-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
-(define-key my-keys-minor-mode-map (kbd "C-p") 'helm-projectile)
-(define-key my-keys-minor-mode-map (kbd "C-e") 'kill-ring-save)
-(define-key my-keys-minor-mode-map (kbd "C-v") 'yank)
-(define-key my-keys-minor-mode-map (kbd "C-d") 'kill-whole-line)
-(define-key my-keys-minor-mode-map (kbd "M-o") (kbd "C-u C-SPC"))
-(define-key my-keys-minor-mode-map (kbd "M-R") 'recentf-open-files)
-(define-key my-keys-minor-mode-map (kbd "C-z") 'undo)
-(define-key my-keys-minor-mode-map (kbd "M-3") 'split-window-right)
-(define-key my-keys-minor-mode-map (kbd "M-2") 'split-window-below)
-(define-key my-keys-minor-mode-map (kbd "M-0") 'delete-window)
-(define-key my-keys-minor-mode-map (kbd "C-c e") 'point-to-register)
-(define-key my-keys-minor-mode-map (kbd "C-c r") 'jump-to-register)
-(define-key my-keys-minor-mode-map (kbd "M-t") 'helm-semantic-or-imenu)
-(define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
-
-(define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
-(define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
-(define-key helm-map (kbd "M-l") 'toggle-input-method)
-
-(define-minor-mode my-keys-minor-mode
-  "A minor mode so that my key settings override annoying major modes."
-  t " my-keys" 'my-keys-minor-mode-map)
+(global-set-key (kbd "<f5>") 'helm-mini)
+(global-set-key (kbd "M-<f5>") 'helm-find-files)
+(global-set-key (kbd "<f6>") 'save-buffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -164,6 +136,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ag-highlight-search t)
+ '(auto-save-interval 20)
+ '(auto-save-timeout 3)
  '(coffee-indent-like-python-mode t)
  '(helm-autoresize-mode t)
  '(helm-buffer-max-length 40)
