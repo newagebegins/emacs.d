@@ -17,7 +17,8 @@
                     helm-descbinds
                     flycheck
                     sass-mode
-                    js2-mode))
+                    js2-mode
+                    magit))
 
 ;; Install missing packages.
 (unless (every #'package-installed-p my-packages)
@@ -133,6 +134,10 @@
 (global-set-key (kbd "<f11>") 'previous-error)
 (global-set-key (kbd "<f12>") 'next-error)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-3") 'kill-whole-line)
+(global-set-key (kbd "C-4") 'kill-ring-save)
+(global-set-key (kbd "C-5") 'yank)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
