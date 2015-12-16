@@ -53,8 +53,8 @@
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control))))
 (setq mouse-wheel-progressive-speed nil)
 
-;; Use Github Flavored Markdown mode for markdown files.
-(add-to-list 'auto-mode-alist '("\\.\\(md\\|txt\\)$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
@@ -124,10 +124,14 @@
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-
-(global-set-key (kbd "<f5>") 'helm-mini)
-(global-set-key (kbd "M-<f5>") 'helm-find-files)
-(global-set-key (kbd "<f6>") 'save-buffer)
+(global-set-key (kbd "<f5>") 'save-buffer)
+(global-set-key (kbd "<f6>") 'helm-mini)
+(global-set-key (kbd "<f7>") 'helm-find-files)
+(global-set-key (kbd "<f8>") 'other-window)
+(global-set-key (kbd "<f9>") 'helm-semantic-or-imenu)
+(global-set-key (kbd "<f10>") 'recompile)
+(global-set-key (kbd "<f11>") 'previous-error)
+(global-set-key (kbd "<f12>") 'next-error)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
