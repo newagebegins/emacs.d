@@ -135,6 +135,7 @@
 (global-set-key (kbd "<f12>") 'next-error)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 (global-set-key (kbd "C-3") 'kill-whole-line)
 (global-set-key (kbd "C-4") 'kill-ring-save)
 (global-set-key (kbd "C-5") 'yank)
