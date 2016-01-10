@@ -18,6 +18,7 @@
                     flycheck
                     sass-mode
                     js2-mode
+                    neotree
                     magit))
 
 ;; Install missing packages.
@@ -142,6 +143,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-0") 'delete-window)
 (define-key my-keys-minor-mode-map (kbd "M-t") 'helm-semantic-or-imenu)
 (define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
+(define-key my-keys-minor-mode-map (kbd "M-7") 'jump-to-register)
+(define-key my-keys-minor-mode-map (kbd "M-8") 'point-to-register)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
@@ -158,10 +161,10 @@
  ;; If there is more than one, they won't work right.
  '(ag-highlight-search t)
  '(coffee-indent-like-python-mode t)
- '(helm-autoresize-mode t)
- '(helm-buffer-max-length 40)
  '(helm-inherit-input-method nil)
  '(js2-basic-offset 2)
+ '(js2-indent-switch-body t)
+ '(neo-window-width 40)
  '(org-imenu-depth 9)
  '(sentence-end-double-space nil))
 (custom-set-faces
