@@ -162,7 +162,8 @@
  '(helm-buffer-max-length 40)
  '(helm-inherit-input-method nil)
  '(js2-basic-offset 2)
- '(org-imenu-depth 9))
+ '(org-imenu-depth 9)
+ '(sentence-end-double-space nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
