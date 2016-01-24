@@ -19,6 +19,7 @@
                     sass-mode
                     js2-mode
                     neotree
+                    restclient
                     magit))
 
 ;; Install missing packages.
@@ -162,6 +163,7 @@
  '(ag-highlight-search t)
  '(coffee-indent-like-python-mode t)
  '(helm-inherit-input-method nil)
+ '(helm-split-window-in-side-p t)
  '(js2-basic-offset 2)
  '(js2-indent-switch-body t)
  '(neo-window-width 40)
