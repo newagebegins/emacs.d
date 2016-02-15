@@ -129,6 +129,7 @@
 (define-key my-keys-minor-mode-map [f12] 'next-error)
 (define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-R") (kbd "C-u C-x s")) ; save all buffers silently
 (define-key my-keys-minor-mode-map (kbd "M-v") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'other-window)
@@ -146,6 +147,9 @@
 (define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
 (define-key my-keys-minor-mode-map (kbd "M-7") 'jump-to-register)
 (define-key my-keys-minor-mode-map (kbd "M-8") 'point-to-register)
+(define-key my-keys-minor-mode-map (kbd "M-g") 'goto-line)
+(define-key my-keys-minor-mode-map (kbd "C-a") 'mark-whole-buffer)
+(define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
 (define-key isearch-mode-map (kbd "M-l") 'isearch-toggle-input-method)
@@ -162,6 +166,7 @@
  ;; If there is more than one, they won't work right.
  '(ag-highlight-search t)
  '(coffee-indent-like-python-mode t)
+ '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
  '(js2-basic-offset 2)
