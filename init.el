@@ -168,6 +168,8 @@
  '(coffee-indent-like-python-mode t)
  '(electric-indent-mode nil)
  '(helm-adaptive-mode t nil (helm-adaptive))
+ '(helm-buffer-max-length nil)
+ '(helm-buffers-truncate-lines nil)
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
  '(js2-basic-offset 2)
