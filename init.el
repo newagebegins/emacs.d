@@ -96,7 +96,7 @@
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (require 'server)
 (unless (server-running-p) (server-start))
@@ -166,6 +166,7 @@
  ;; If there is more than one, they won't work right.
  '(ag-highlight-search t)
  '(coffee-indent-like-python-mode t)
+ '(electric-indent-mode nil)
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
