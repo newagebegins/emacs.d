@@ -4,7 +4,6 @@
 (package-initialize)
 
 (setq my-packages '(markdown-mode
-                    scss-mode
                     yaml-mode
                     jade-mode
                     coffee-mode
@@ -17,10 +16,7 @@
                     helm-descbinds
                     flycheck
                     sass-mode
-                    js2-mode
-                    neotree
-                    restclient
-                    magit))
+                    js2-mode))
 
 ;; Install missing packages.
 (unless (every #'package-installed-p my-packages)
@@ -30,7 +26,6 @@
       (package-install package))))
 
 (load-theme 'tango-dark t)
-
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
 (setq make-backup-files nil)
@@ -40,9 +35,6 @@
 
 (setq ring-bell-function 'ignore) ; Disable annoying sounds on Windows.
 (show-paren-mode)
-;; Need tool-bar-mode to be active for grep and ag to work correctly.
-;; With disabled tool-bar-mode they often finish prematurely.
-;; (tool-bar-mode 0)
 (blink-cursor-mode 0)
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
@@ -95,8 +87,6 @@
 
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
-
-;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (require 'server)
 (unless (server-running-p) (server-start))
@@ -174,9 +164,11 @@
  '(helm-split-window-in-side-p t)
  '(js2-basic-offset 2)
  '(js2-indent-switch-body t)
+ '(menu-bar-mode nil)
  '(neo-window-width 40)
  '(org-imenu-depth 9)
- '(sentence-end-double-space nil))
+ '(sentence-end-double-space nil)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
