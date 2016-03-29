@@ -101,7 +101,7 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
-(helm-mode 1)
+;;(helm-mode 1)
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
@@ -110,7 +110,7 @@
 
 (helm-descbinds-mode)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
@@ -139,6 +139,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-8") 'point-to-register)
 (define-key my-keys-minor-mode-map (kbd "M-g") 'goto-line)
 (define-key my-keys-minor-mode-map (kbd "C-a") 'mark-whole-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-j") 'dired-jump)
 (define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
@@ -155,8 +156,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ag-highlight-search t)
+ '(auto-revert-interval 0.2)
  '(coffee-indent-like-python-mode t)
- '(electric-indent-mode nil)
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-buffer-max-length nil)
  '(helm-buffers-truncate-lines nil)
