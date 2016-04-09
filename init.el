@@ -16,6 +16,7 @@
                     helm-descbinds
                     flycheck
                     sass-mode
+                    magit
                     js2-mode))
 
 ;; Install missing packages.
@@ -49,6 +50,7 @@
 (setq mouse-wheel-progressive-speed nil)
 
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
@@ -101,7 +103,7 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
-;;(helm-mode 1)
+(helm-mode 1)
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
@@ -114,6 +116,7 @@
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
+(define-key my-keys-minor-mode-map [f8] 'helm-resume)
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
@@ -159,7 +162,7 @@
  '(auto-revert-interval 0.2)
  '(coffee-indent-like-python-mode t)
  '(helm-adaptive-mode t nil (helm-adaptive))
- '(helm-buffer-max-length nil)
+ '(helm-buffer-max-length 30)
  '(helm-buffers-truncate-lines nil)
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
