@@ -7,9 +7,7 @@
                     yaml-mode
                     jade-mode
                     coffee-mode
-                    ag
                     wgrep
-                    wgrep-ag
                     helm
                     projectile
                     helm-projectile
@@ -17,6 +15,7 @@
                     flycheck
                     sass-mode
                     magit
+                    git-commit
                     js2-mode))
 
 ;; Install missing packages.
@@ -158,7 +157,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ag-highlight-search t)
  '(auto-revert-interval 0.2)
  '(coffee-indent-like-python-mode t)
  '(helm-adaptive-mode t nil (helm-adaptive))
