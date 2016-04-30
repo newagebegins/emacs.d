@@ -111,6 +111,15 @@
 
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
+(setq ibuffer-formats
+      '((mark modified read-only " "
+              (name 32 32 :left :elide)
+              " "
+              (size 9 -1 :right)
+              " "
+              (mode 16 16 :left :elide)
+              " " filename-and-process)))
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
 (define-key my-keys-minor-mode-map [f8] 'helm-resume)
