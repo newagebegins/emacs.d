@@ -109,11 +109,11 @@
 
 (helm-descbinds-mode)
 
-;;(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq ibuffer-formats
       '((mark modified read-only " "
-              (name 32 32 :left :elide)
+              (name 50 50 :left :elide)
               " "
               (size 9 -1 :right)
               " "
@@ -149,6 +149,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-g") 'goto-line)
 (define-key my-keys-minor-mode-map (kbd "C-a") 'mark-whole-buffer)
 (define-key my-keys-minor-mode-map (kbd "M-j") 'dired-jump)
+(define-key my-keys-minor-mode-map (kbd "M-5") 'ibuffer)
 (define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
@@ -166,13 +167,16 @@
  ;; If there is more than one, they won't work right.
  '(auto-revert-interval 0.2)
  '(coffee-indent-like-python-mode t)
+ '(column-number-mode t)
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-buffer-max-length 30)
  '(helm-buffers-truncate-lines nil)
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
+ '(ibuffer-old-time 3)
  '(js2-basic-offset 2)
  '(js2-indent-switch-body t)
+ '(js2-strict-trailing-comma-warning nil)
  '(menu-bar-mode nil)
  '(neo-window-width 40)
  '(org-imenu-depth 9)
