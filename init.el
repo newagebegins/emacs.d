@@ -109,7 +109,7 @@
 
 (helm-descbinds-mode)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq ibuffer-formats
       '((mark modified read-only " "
@@ -119,6 +119,19 @@
               " "
               (mode 16 16 :left :elide)
               " " filename-and-process)))
+
+;; https://www.emacswiki.org/emacs/IncrementNumber
+(defun increment-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0123456789")
+  (or (looking-at "[0123456789]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+(setq org-src-fontify-natively t)
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
