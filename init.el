@@ -54,7 +54,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
 (savehist-mode 1)
-(global-subword-mode 1)
 
 (setq require-final-newline nil)
 (setq mode-require-final-newline nil)
@@ -190,6 +189,7 @@
  '(js2-basic-offset 2)
  '(js2-indent-switch-body t)
  '(js2-strict-trailing-comma-warning nil)
+ '(magit-diff-refine-hunk (quote all))
  '(menu-bar-mode nil)
  '(neo-window-width 40)
  '(org-imenu-depth 9)
