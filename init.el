@@ -77,6 +77,9 @@
   (setq c-default-style "awk"))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
+(add-hook 'js2-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'jade-mode-hook (lambda () (setq truncate-lines t)))
+
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
 
@@ -194,7 +197,8 @@
  '(neo-window-width 40)
  '(org-imenu-depth 9)
  '(sentence-end-double-space nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(undo-limit 8000000))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
