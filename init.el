@@ -16,6 +16,7 @@
                     sass-mode
                     magit
                     git-commit
+                    zenburn-theme
                     js2-mode))
 
 ;; Install missing packages.
@@ -25,7 +26,7 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-(load-theme 'tango-dark t)
+(load-theme 'zenburn t)
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 
 (setq make-backup-files nil)
