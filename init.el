@@ -80,6 +80,7 @@
 
 (add-hook 'js2-mode-hook (lambda () (setq truncate-lines t)))
 (add-hook 'jade-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'coffee-mode-hook (lambda () (setq truncate-lines t)))
 
 (winner-mode)
 (setq set-mark-command-repeat-pop t)
