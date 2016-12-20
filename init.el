@@ -74,6 +74,7 @@
 (setq css-indent-offset 2)
 
 (defun my-c-mode-hook ()
+  ;;(c-set-offset 'case-label '+)
   (setq c-basic-offset 4)
   (setq c-default-style "awk"))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
