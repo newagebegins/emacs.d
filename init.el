@@ -1,6 +1,6 @@
 (require 'cl)
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (setq my-packages '(markdown-mode
@@ -137,6 +137,9 @@
  '((python . t)))
 (setq org-src-fontify-natively t)
 
+;; Disable version control. Fixes "index.lock exists" error during rebase.
+(setq vc-handled-backends nil)
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
 (define-key my-keys-minor-mode-map [f8] 'helm-resume)
@@ -191,13 +194,17 @@
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
  '(ibuffer-old-time 3)
- '(js2-basic-offset 2)
+ '(js-indent-level 2)
+ '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
  '(js2-strict-trailing-comma-warning nil)
  '(magit-diff-refine-hunk (quote all))
  '(menu-bar-mode nil)
  '(neo-window-width 40)
  '(org-imenu-depth 9)
+ '(package-selected-packages
+   (quote
+    (git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
  '(sentence-end-double-space nil)
  '(tool-bar-mode nil)
  '(undo-limit 8000000))

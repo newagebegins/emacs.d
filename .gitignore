@@ -10,3 +10,5 @@
 /server/
 /session*
 /helm-adaptive-history
+/bookmarks
+/#recentf#
