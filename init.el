@@ -16,6 +16,7 @@
                     sass-mode
                     magit
                     git-commit
+                    git-timemachine
                     zenburn-theme
                     js2-mode))
 
