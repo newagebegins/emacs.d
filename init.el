@@ -75,9 +75,10 @@
 (setq css-indent-offset 2)
 
 (defun my-c-mode-hook ()
-  ;;(c-set-offset 'case-label '+)
-  (setq c-basic-offset 4)
-  (setq c-default-style "awk"))
+  (c-set-offset 'case-label '+)
+  (setq c-basic-offset 2)
+  (setq c-default-style "awk")
+  (setq truncate-lines t))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 (defun my-js2-mode-hook ()
@@ -118,8 +119,6 @@
 (setq projectile-switch-project-action 'helm-projectile)
 
 (helm-descbinds-mode)
-
-;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq ibuffer-formats
       '((mark modified read-only " "
