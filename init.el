@@ -80,7 +80,11 @@
   (setq c-default-style "awk"))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
-(add-hook 'js2-mode-hook (lambda () (setq truncate-lines t)))
+(defun my-js2-mode-hook ()
+  (setq truncate-lines t)
+  (setq fill-column 90))
+(add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
 (add-hook 'jade-mode-hook (lambda () (setq truncate-lines t)))
 (add-hook 'coffee-mode-hook (lambda () (setq truncate-lines t)))
 
@@ -199,6 +203,7 @@
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
+ '(js2-mode-show-strict-warnings nil)
  '(js2-strict-trailing-comma-warning nil)
  '(magit-diff-refine-hunk (quote all))
  '(menu-bar-mode nil)
