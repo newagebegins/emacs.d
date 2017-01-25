@@ -146,6 +146,11 @@
 ;; Disable version control. Fixes "index.lock exists" error during rebase.
 (setq vc-handled-backends nil)
 
+(defun ansi-color-apply-on-region-int (beg end)
+  "interactive version of func"
+  (interactive "r")
+  (ansi-color-apply-on-region beg end))
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
 (define-key my-keys-minor-mode-map [f8] 'helm-resume)
