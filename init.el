@@ -76,7 +76,7 @@
 
 (defun my-c-mode-hook ()
   (c-set-offset 'case-label '+)
-  (setq c-basic-offset 2)
+  (setq c-basic-offset 4)
   (setq c-default-style "awk")
   (setq truncate-lines t))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
@@ -201,6 +201,7 @@
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-buffer-max-length 30)
  '(helm-buffers-truncate-lines nil)
+ '(helm-find-file-ignore-thing-at-point t)
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
  '(ibuffer-old-time 3)
