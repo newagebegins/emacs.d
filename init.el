@@ -137,6 +137,13 @@
       (error "No number at point"))
   (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
 
+(defun decrement-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0123456789")
+  (or (looking-at "[0123456789]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
@@ -150,9 +157,11 @@
   (interactive "r")
   (ansi-color-apply-on-region beg end))
 
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-global-modes '(coffee-mode))
+
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
-(define-key my-keys-minor-mode-map [f8] 'helm-resume)
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
