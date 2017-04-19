@@ -215,7 +215,8 @@
  '(helm-inherit-input-method nil)
  '(helm-split-window-in-side-p t)
  '(ibuffer-old-time 3)
- '(js-indent-level 2 t)
+ '(imenu-max-item-length nil)
+ '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
  '(js2-mode-show-strict-warnings nil)
@@ -226,7 +227,7 @@
  '(org-imenu-depth 9)
  '(package-selected-packages
    (quote
-    (git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
+    (wgrep-ag ag git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
  '(sentence-end-double-space nil)
  '(tool-bar-mode nil)
  '(undo-limit 8000000))
