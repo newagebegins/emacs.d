@@ -8,6 +8,8 @@
                     jade-mode
                     coffee-mode
                     wgrep
+                    ag
+                    wgrep-ag
                     helm
                     projectile
                     helm-projectile
