@@ -78,7 +78,7 @@
 
 (defun my-c-mode-hook ()
   (c-set-offset 'case-label '+)
-  (setq c-basic-offset 4)
+  (setq c-basic-offset 2)
   (setq c-default-style "awk")
   (setq truncate-lines t))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
@@ -146,6 +146,7 @@
       (error "No number at point"))
   (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
 
+(require 'ob-sh)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
