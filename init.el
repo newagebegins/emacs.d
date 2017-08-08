@@ -170,6 +170,7 @@
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
+(define-key my-keys-minor-mode-map [f9] 'magit-status)
 (define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'save-buffer)
 (define-key my-keys-minor-mode-map (kbd "M-R") (kbd "C-u C-x s")) ; save all buffers silently
