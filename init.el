@@ -54,6 +54,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.apib\\'" . gfm-mode))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq compilation-scroll-output 'first-error)
@@ -206,6 +208,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-highlight-search t)
  '(auto-revert-interval 0.2)
  '(coffee-indent-like-python-mode t)
  '(column-number-mode t)
@@ -224,6 +227,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(js2-strict-trailing-comma-warning nil)
  '(magit-diff-refine-hunk (quote all))
+ '(markdown-gfm-use-electric-backquote nil)
  '(menu-bar-mode nil)
  '(neo-window-width 40)
  '(org-imenu-depth 9)
