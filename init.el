@@ -195,6 +195,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-5") 'query-replace)
 (define-key my-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-\\") 'indent-region)
+(define-key my-keys-minor-mode-map (kbd "M-6") 'delete-indentation)
 (define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
