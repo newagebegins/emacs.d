@@ -238,7 +238,7 @@
  '(helm-split-window-in-side-p t)
  '(ibuffer-old-time 3)
  '(imenu-max-item-length nil)
- '(js-indent-level 2 t)
+ '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
  '(js2-mode-show-strict-warnings nil)
