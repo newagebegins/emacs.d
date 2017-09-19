@@ -148,6 +148,19 @@
       (error "No number at point"))
   (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
 
+;; https://www.emacswiki.org/emacs/TransposeWindows
+(defun transpose-windows (arg)
+  "Transpose the buffers shown in two windows."
+  (interactive "p")
+  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
+    (while (/= arg 0)
+      (let ((this-win (window-buffer))
+            (next-win (window-buffer (funcall selector))))
+        (set-window-buffer (selected-window) next-win)
+        (set-window-buffer (funcall selector) this-win)
+        (select-window (funcall selector)))
+      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
+
 (require 'ob-sh)
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -196,6 +209,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-\\") 'indent-region)
 (define-key my-keys-minor-mode-map (kbd "M-6") 'delete-indentation)
+(define-key my-keys-minor-mode-map (kbd "M-4") 'transpose-windows)
 (define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
 
 (define-key my-keys-minor-mode-map (kbd "M-l") 'toggle-input-method)
