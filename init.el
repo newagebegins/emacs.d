@@ -20,7 +20,8 @@
                     git-commit
                     git-timemachine
                     zenburn-theme
-                    js2-mode))
+                    js2-mode
+                    rjsx-mode))
 
 ;; Install missing packages.
 (unless (every #'package-installed-p my-packages)
@@ -54,7 +55,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.apib\\'" . gfm-mode))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -235,7 +236,7 @@
  '(helm-buffers-truncate-lines nil)
  '(helm-find-file-ignore-thing-at-point t)
  '(helm-inherit-input-method nil)
- '(helm-split-window-in-side-p t)
+ '(helm-split-window-inside-p t)
  '(ibuffer-old-time 3)
  '(imenu-max-item-length nil)
  '(js-indent-level 2)
@@ -250,7 +251,7 @@
  '(org-imenu-depth 9)
  '(package-selected-packages
    (quote
-    (wgrep-ag ag git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
+    (rjsx-mode wgrep-ag ag git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
  '(sentence-end-double-space nil)
  '(tool-bar-mode nil)
  '(undo-limit 8000000))
