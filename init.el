@@ -13,8 +13,6 @@
                     helm
                     projectile
                     helm-projectile
-                    helm-descbinds
-                    flycheck
                     sass-mode
                     magit
                     git-commit
@@ -123,8 +121,6 @@
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
 
-(helm-descbinds-mode)
-
 (setq ibuffer-formats
       '((mark modified read-only " "
               (name 50 50 :left :elide)
@@ -175,9 +171,6 @@
   "interactive version of func"
   (interactive "r")
   (ansi-color-apply-on-region beg end))
-
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(setq flycheck-global-modes '(coffee-mode))
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
@@ -239,7 +232,7 @@
  '(helm-split-window-inside-p t)
  '(ibuffer-old-time 3)
  '(imenu-max-item-length nil)
- '(js-indent-level 2)
+ '(js-indent-level 2 t)
  '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
  '(js2-mode-show-strict-warnings nil)
@@ -251,7 +244,7 @@
  '(org-imenu-depth 9)
  '(package-selected-packages
    (quote
-    (rjsx-mode wgrep-ag ag git-timemachine js2-mode zenburn-theme magit sass-mode flycheck helm-descbinds helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
+    (rjsx-mode wgrep-ag ag git-timemachine js2-mode zenburn-theme magit sass-mode helm-projectile projectile helm wgrep coffee-mode jade-mode yaml-mode markdown-mode)))
  '(sentence-end-double-space nil)
  '(tool-bar-mode nil)
  '(undo-limit 8000000))
