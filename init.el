@@ -101,9 +101,6 @@
 (setq coffee-tab-width 2)
 (setq ruby-insert-encoding-magic-comment nil)
 
-(require 'server)
-(unless (server-running-p) (server-start))
-
 (add-to-list 'safe-local-variable-values '(encoding . utf-8))
 
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
