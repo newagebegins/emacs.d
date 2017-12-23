@@ -73,7 +73,7 @@
 (setq-default indicate-empty-lines t)
 (delete-selection-mode)
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 4)
+(setq default-tab-width 8)
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
 
@@ -182,6 +182,13 @@
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
+(defun my-asm-mode-hook ()
+  (setq indent-tabs-mode t)
+  (electric-indent-local-mode -1)
+  (setq tab-width 8))
+(add-hook 'asm-mode-hook #'my-asm-mode-hook)
+(add-to-list 'auto-mode-alist '("\\.ys\\'" . asm-mode))
+
 (define-key my-keys-minor-mode-map [f10] 'recompile)
 (define-key my-keys-minor-mode-map [f11] 'previous-error)
 (define-key my-keys-minor-mode-map [f12] 'next-error)
@@ -210,6 +217,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-5") 'query-replace)
 (define-key my-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "C-\\") 'indent-region)
+(define-key my-keys-minor-mode-map [f5] 'indent-rigidly)
 (define-key my-keys-minor-mode-map (kbd "M-6") 'delete-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-4") 'transpose-windows)
 (define-key helm-map (kbd "M-RET") 'helm-ff-run-switch-other-window)
