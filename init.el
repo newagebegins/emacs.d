@@ -246,6 +246,7 @@
  '(helm-find-file-ignore-thing-at-point t)
  '(helm-inherit-input-method nil)
  '(helm-split-window-inside-p t)
+ '(hexl-bits 8)
  '(ibuffer-old-time 3)
  '(imenu-max-item-length nil)
  '(js-indent-level 2 t)
