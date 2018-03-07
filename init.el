@@ -79,7 +79,7 @@
 
 (defun my-c-mode-hook ()
   (c-set-offset 'case-label '+)
-  (setq c-basic-offset 2)
+  (setq c-basic-offset 4)
   (setq c-default-style "awk")
   (setq truncate-lines t))
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
