@@ -1,6 +1,7 @@
 (require 'cl)
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (setq my-packages '(markdown-mode
@@ -243,7 +244,7 @@
  '(column-number-mode t)
  '(git-commit-fill-column 100)
  '(helm-adaptive-mode t nil (helm-adaptive))
- '(helm-buffer-max-length 30)
+ '(helm-buffer-max-length 50)
  '(helm-buffers-truncate-lines nil)
  '(helm-find-file-ignore-thing-at-point t)
  '(helm-find-files-ignore-thing-at-point t)
@@ -252,7 +253,7 @@
  '(hexl-bits 8)
  '(ibuffer-old-time 3)
  '(imenu-max-item-length nil)
- '(js-indent-level 2 t)
+ '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-indent-switch-body t)
  '(js2-mode-show-strict-warnings nil)
